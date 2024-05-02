@@ -1,0 +1,1 @@
+# playbook_docker_container_image

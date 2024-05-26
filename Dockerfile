@@ -17,6 +17,9 @@ RUN npm install
 # Copy the rest of the application files
 COPY . .
 
+#Convert TS to JS
+RUN tsc
+
 # Expose the port on which your server runs
 EXPOSE 1000
 EXPOSE 1001

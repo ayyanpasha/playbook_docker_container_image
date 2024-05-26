@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node terminal.js & node fileStructure.js & node codeBase.js"
+    "start": "node dist/terminal.js & node dist/fileStructure.js & node dist/codeBase.js"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +14,6 @@
     "@types/ws": "^8.5.10",
     "node-pty": "^1.0.0",
     "ssh2": "^1.15.0",
-    "ws": "^8.16.0"
+    "ws": "^8.17.0"
   }
 }

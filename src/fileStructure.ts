@@ -1,10 +1,10 @@
-const fs = require('fs');
-const path = require('path');
-const WebSocket = require('ws');
+import fs from 'fs';
+import path from 'path';
+import WebSocket from 'ws';
 
 const wss = new WebSocket.Server({ port: 1001 });
 
-wss.on('connection', ws => {
+wss.on('connection', (ws: WebSocket) => {
     const folderPath = '/root';
     console.log('Client connected - FS');
 
@@ -21,13 +21,13 @@ wss.on('connection', ws => {
     });
 });
 
-function sendFileStructure(ws, folderPath) {
+function sendFileStructure(ws: WebSocket, folderPath: string) {
     const folderStructure = getAllFilesAndFolders(folderPath);
     ws.send(JSON.stringify(folderStructure));
 }
 
-function getAllFilesAndFolders(folderPath) {
-    const result = {};
+function getAllFilesAndFolders(folderPath: string): Record<string, any> {
+    const result: Record<string, any> = {};
 
     // Read the contents of the folder
     try {

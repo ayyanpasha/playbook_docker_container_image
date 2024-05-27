@@ -5,7 +5,7 @@ import pty from 'node-pty';
 const shell = os.platform() === 'win32' ? 'powershell.exe' : 'bash';
 const wss = new WebSocket.Server({ port: 1000 });
 
-wss.on('connection', function connection(ws: any) {
+wss.on('connection', function connection(ws) {
     let check = true;
 
     const ptyProcess = pty.spawn(shell, [], {
@@ -22,7 +22,7 @@ wss.on('connection', function connection(ws: any) {
     });
 
     // Handle WebSocket messages
-    ws.on('message', function incoming(message: any) {
+    ws.on('message', function incoming(message) {
         ptyProcess.write(message.toString());
     });
 

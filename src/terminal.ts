@@ -1,12 +1,12 @@
-const WebSocket = require('ws');
-const os = require('os');
-const pty = require('node-pty');
+import WebSocket from 'ws';
+import os from 'os';
+import pty from 'node-pty';
 
 const shell = os.platform() === 'win32' ? 'powershell.exe' : 'bash';
 const wss = new WebSocket.Server({ port: 1000 });
 
-wss.on('connection', function connection(ws) {
-    let check = true; 
+wss.on('connection', function connection(ws: any) {
+    let check = true;
 
     const ptyProcess = pty.spawn(shell, [], {
         name: 'xterm-color',
@@ -15,20 +15,15 @@ wss.on('connection', function connection(ws) {
         cwd: process.env.HOME,
         env: process.env
     });
-    
+
     console.log('Client connected');
     ptyProcess.onData((data) => {
-        // process.stdout.write(data);
         ws.send(data);
     });
-    
+
     // Handle WebSocket messages
-    ws.on('message', function incoming(message) {
-        // Send data from pty to WebSocket clients
-        // if(check){
-        //     check = false;            
-        // }
-        ptyProcess.write(message);
+    ws.on('message', function incoming(message: any) {
+        ptyProcess.write(message.toString());
     });
 
     // Handle WebSocket client disconnect

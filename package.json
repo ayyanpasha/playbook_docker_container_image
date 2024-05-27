@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/terminal.js & node dist/fileStructure.js & node dist/codeBase.js"
+    "start": "node dist/terminal.js & node dist/fileStructure.js & node dist/codeBase.js"
   },
   "keywords": [],
   "author": "",

@@ -48,7 +48,7 @@ Make sure you have the following installed on your machine:
     docker build -t terminal-codedamn-server .
 
 5. **Run Docker Image:**
-    The container will be created when API request has been made to create new project from server: https://github.com/ayyanpasha/playbook_express_api.git
+    - The container will be created when API request has been made to create new project from server: https://github.com/ayyanpasha/playbook_express_api.git
 
 ## Built With
 

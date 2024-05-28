@@ -1,8 +1,9 @@
 # Codedamn Container Code
 
 This is made to support the playground communication with:
-FrontEnd: https://github.com/ayyanpasha/codedamn-frontend.git
-Express API: https://github.com/ayyanpasha/playbook_express_api.git
+- FrontEnd: https://github.com/ayyanpasha/codedamn-frontend.git
+- Express API: https://github.com/ayyanpasha/playbook_express_api.git
+- Communication between client and Dockerized image: https://github.com/ayyanpasha/playbook_docker_proxy_image.git
 
 This repository contains three WebSocket servers that handle various tasks:
 - Managing terminal sessions.
